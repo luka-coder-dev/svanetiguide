@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVANETIGUID.com</title>
+    <link rel="stylesheet" href="function.css">
+    <link rel="stylesheet" href="loginpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div id="logo"><img id="logoimg" src="logo.png" ></div>
+        <nav>
+            <ul>
+                <li class="clickable"><a href="home.html">Home</a></li>
+                <li class="clickable"><a href="walking-tours.html">Walking Tours</a></li>
+                <li class="clickable"><a href="horse-tours.html">horse tours</a></li>
+                <li class="clickable"><a href="bike-tours.html">Bike Tours</a></li>
+                <li id="searchcontainer">
+                    <input type="text" name="search" id="searchbar" placeholder="Search...">
+                    <i class="fas fa-search"></i>
+                </li>
+                <li id="login-btn"><img id="loginimg" src="149071.png" alt=""></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Normal Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Login</h1>
+            <input type="text" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button id="login-submit">Login</button>
+            <span class="forgot-password">Forgot your password?</span>
+            <span class="signup-link" id="signup-link">Don't have an account? Sign Up</span>
+            
+        </div>
+    </div>
+
+  
+
+    <!-- Normal Sign-Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Sign Up</h1>
+            <input type="text" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+            <button id="signup-submit">Sign Up</button>
+          
+            <span class="signup-link" id="login-link">Already have an account? Login</span>
+        </div>
+    </div>
+
+   
+
+    <script src="js.js"></script>  
+</body>
+</html>

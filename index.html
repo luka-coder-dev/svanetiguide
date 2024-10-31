@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVANETIGUID.com</title>
+    <link rel="stylesheet" href="function.css">
+    <link rel="stylesheet" href="loginpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+  <!-- Main Header Section for larger screens -->
+  <header id="header">
+    <img src="images/logo.png" id="logo">
+    <nav>
+        <ul class="myul">
+            <li><a href="home.html"><img src="icons/home.png" class="icons"></a></li>
+                <li><a href="walking-tours.html"><img src="icons/walk.png" class="icons"></a></li>
+            <li><a href="bike-tours.html"><img src="icons/bike.png"  class="icons"></a></li>
+            <li><a href="horse-tours.html"><img src="icons/horse.png" class="icons"></a></li>
+            <li id="searchcontainer">
+                <input type="text" name="search" id="searchbar" placeholder="Search...">
+                <img src="icons/pixil-frame-0 (4).png" alt="">
+            </li>
+            <li id="login-btn"><img id="loginimg" src="images/149071.png"></li>
+        </ul>
+    </nav>
+</header>
+
+  <!-- Side Navigation for smaller screens -->
+  <div id="hamburgerIcon" class="fas fa-bars"></div>
+  <nav id="sideNav">
+      <ul>
+        <li>
+          <img id="loginimg" src="images/149071.png" alt="Login">
+        </li>
+          <li class="clickable"><a href="#">Home</a></li>
+          <li class="clickable"><a href="#">About</a></li>
+          <li class="clickable"><a href="#">Services</a></li>
+          <li class="clickable"> <a href="#">Contact</a></li>
+      </ul>
+  </nav>
+  <div class="overlay" id="overlay"></div> 
+
+    <!-- Image Slider Section -->
+    <section  id="slider">
+        <div id="gradient"></div>
+        <div class="slides">
+            <div class="slide">
+                <img src="images/image 01.jpg" alt="Image 1" class="sliderimages">
+                <div class="slide-text">
+                    <h2 id="myh2" class="texton">Svaneti</h2>
+                    <p id="myp1" class="texton">Svaneti is known for its beautiful mountains like Zuruldi, Tetnuldi, and others, where you can go hiking or skiing in winter.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/image 02.jpg" alt="Image 2" class="sliderimages">
+                <div class="slide-text">
+                    <h2 id="myh2" class="texton">Svan towers</h2>
+                    <p id="myp1" class="texton">Svan towers are common defensive structures in Svaneti, usually 20-25 meters high, with 4-5 floors, and sometimes even 6.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/image 03.webp" alt="Image 3" class="sliderimages">
+                <div class="slide-text">
+                    <h2 id="myh2" class="texton">Kubdari</h2>
+                    <p id="myp1" class="texton">Kubdari is a traditional Svanetian dish made with folded meat dough and secret local ingredients.</p>
+                </div>
+            </div>
+        </div>
+        <a class="prev" onclick="showSlides(-1)">&#10094;</a>
+        <a class="next" onclick="showSlides(1)">&#10095;</a>
+    </section>
+    <h1 id="seasonh1">You can enjoy trip in Svaneti <br>
+         no matter the season</h1>
+         <div id="gridcontainer">
+            <div class="seasons">
+              <section>
+                <h1>spring</h1>
+                <p>Spring in Svaneti is a magical time when the mountains come alive with blooming flowers and melting snow, offering stunning hiking opportunities.</p>
+                </section>
+            </div>
+            <div class="seasons">
+              <section>
+                <h1>summer</h1>
+                <p>Summer is the perfect season for exploring Svaneti’s lush green landscapes, enjoying long daylight hours, and taking part in outdoor activities.</p>
+                </section>
+            </div>
+            <div class="seasons">
+              <section>
+                <h1>autumn</h1>
+                <p>Autumn brings a riot of colors to Svaneti, with forests turning shades of gold and red, making it a paradise for photographers and nature lovers.</p>
+              </section>
+            </div>
+            <div class="seasons">
+              <section>
+                <h1>winter</h1>
+                <p>Winter in Svaneti transforms the region into a snowy wonderland, perfect for skiing, snowboarding, and experiencing the unique winter culture.</p>
+               </section>
+            </div>
+        </div>
+        <h1 id="seasonh1">Top Locations in Svaneti</h1>
+<div id="locations-container">
+  <button id="prev-btn" class="nav-btn">&#10094;</button>
+  <div id="location-slider">
+    <div class="location-card">
+      <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+      <p class="location-title">Location 1</p>
+      <p class="location-views">Some description here</p>
+    </div>
+    <div class="location-card">
+      <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+      <p class="location-title">Location 2</p>
+      <p class="location-views">Another description here</p>
+    </div>
+      <div class="location-card">
+      <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+      <p class="location-title">Location 2</p>
+      <p class="location-views">Another description here</p>
+    </div>
+    <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+      <div class="location-card">
+        <div class="thumbnail" style="background-image: url('image2.jpg');"></div>
+        <p class="location-title">Location 2</p>
+        <p class="location-views">Another description here</p>
+      </div>
+  </div>
+  <button id="next-btn" class="nav-btn">&#10095;</button>
+</div>
+
+<section id="svanetian-salt-section">
+    <div class="svanetian-salt-content">
+        <div class="text-content">
+            <h2>Svanetian Salt</h2>
+            <p>Experience the unique flavor of Svanetian Salt, a traditional blend of local herbs and spices, harvested from the pristine mountains of Svaneti. Perfect for enhancing your culinary creations.</p>
+            <button class="btn-learn-more">Learn More</button>
+            <button class="btn-learn-more" id="buy">buy</button>
+        </div>
+        
+        <div class="image-content">
+            <img src="images/svanetian-salt.jpg" >
+        </div>
+    </div>
+</section>
+        
+    <!-- Normal Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Login</h1>
+            <input type="text" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button id="login-submit">Login</button>
+            <span class="forgot-password">Forgot your password?</span>
+            <span class="signup-link" id="signup-link">Don't have an account? Sign Up</span>
+        </div>
+    </div>
+
+    <!-- Normal Sign-Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Sign Up</h1>
+            <input type="text" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+            <button id="signup-submit">Sign Up</button>
+            <span class="signup-link" id="login-link">Already have an account? Login</span>
+        </div>
+    </div>
+  <script src="js.js" ></script>
+  
+<script  src="slider.js"></script>
+</body>
+
+</html>
