@@ -460,7 +460,7 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 90%;
     margin: 0 auto;
     overflow: hidden;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
