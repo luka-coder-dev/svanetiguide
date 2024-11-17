@@ -306,6 +306,7 @@ nav ul li a:hover::after {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+
 }
 .seasons section{
     position: absolute;
@@ -349,12 +350,10 @@ nav ul li a:hover::after {
 }
 
 .seasons p {
-    
-    font-size: 1.5rem;
- 
+    font-size: 1.2rem;
     color: white;
-  
 }
+
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
@@ -376,6 +375,14 @@ nav ul li a:hover::after {
     #searchbar {
         width: 120px; /* Reduce search bar width */
     }
+}
+@media (max-width: 768px){
+    .seasons p {
+        color: white;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    
 }
 
 @media (max-width: 600px) {
@@ -400,6 +407,7 @@ nav ul li a:hover::after {
     
     .seasons p {
         font-size: 1.2rem;
+        color: white;
     }
     
     /* Mobile side navigation */
@@ -449,10 +457,6 @@ nav ul li a:hover::after {
     margin-bottom: 10px;
 }
 
-.seasons p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
 
 #locations-container {
     position: relative;
