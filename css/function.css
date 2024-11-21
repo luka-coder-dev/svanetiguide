@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial,  sans-serif;
 }
 
 body {
@@ -245,31 +246,50 @@ nav ul li a:hover::after {
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    left: 90%; /* Position both buttons to the left of 90% */
+    left: 90%; /* Position buttons near the right edge */
     width: auto;
     padding: 16px;
     margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 18px;
-    border-radius: 0 3px 3px 0;
+    border-radius: 10px; /* Circular shape */
     user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(145deg, rgba(219, 219, 219, 0.305), rgba(255, 255, 255, 0.3)); /* Subtle, soft gradient */
     z-index: 2; /* Ensure buttons are above the overlay */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth animations */
 }
 
 .next {
-    top: 80%; /* Position the 'next' button 80px from the top */
-    border-radius: 3px 0 0 3px;
+    top: 80%; /* Position the 'next' button */
+    transform: translateY(-50%);
 }
 
 .prev {
-    top: 88%; /* Position the 'prev' button vertically centered */
+    top: 88%; /* Position the 'prev' button */
+    transform: translateY(-50%);
 }
 
+/* Hover Effect */
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(145deg, rgba(180, 180, 180, 0.5), rgba(220, 220, 220, 0.5)); /* Slightly darker hover gradient */
+    color: #f0f0f0; /* Subtle color adjustment for the text */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    transform: translateY(-50%) scale(1.05); /* Slightly larger on hover */
+    filter: brightness(1.2); /* Add a brightening effect */
 }
+/* Hide navigation buttons on mobile and allow swipe functionality */
+@media only screen and (max-width: 768px) {
+    .prev, .next {
+        display: none; /* Hide navigation buttons */
+    }
+
+    .slides {
+        touch-action: pan-y; /* Enable swipe gestures */
+    }
+}
+
 
 .texton {
     background-color: transparent;
@@ -577,12 +597,16 @@ nav ul li a:hover::after {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+    transform: scale(1); /* Initial scale */
 }
 
 .btn-learn-more:hover {
     background-color: #1a252f; /* Darker shade on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
 }
+
 #buy{
     margin-left: 2rem;
 }
@@ -602,12 +626,6 @@ nav ul li a:hover::after {
 
 .image-content img:hover {
     transform: scale(1.05); /* Slight zoom on hover */
-}
-/* General Styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
 }
 
 header {

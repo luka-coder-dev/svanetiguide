@@ -3,69 +3,52 @@ document.addEventListener('DOMContentLoaded', function () {
     let slideIndex = 0;
     let autoSlideInterval;
     let userInteraction = false;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-    // Function to set the active link based on the current page URL
+    // Set the active link based on the current page URL
     function setActiveLink() {
-        const currentPage = window.location.pathname.split('/').pop(); // Get the current page name
+        const currentPage = window.location.pathname.split('/').pop();
         document.querySelectorAll('.clickable a').forEach(link => {
             if (link.getAttribute('href') === currentPage) {
-                link.parentElement.classList.add('active'); // Set 'active' class on the matching link's parent
-                previousElement = link.parentElement; // Store the reference of the active element
+                link.parentElement.classList.add('active');
+                previousElement = link.parentElement;
             } else {
-                link.parentElement.classList.remove('active'); // Remove 'active' class from other links
+                link.parentElement.classList.remove('active');
             }
         });
     }
 
-    // Function to handle active class switching on click
+    // Handle clickable active class switching
     function handleClickableClick(element) {
         if (previousElement) {
-            previousElement.classList.remove('active'); // Remove 'active' class from previously active element
+            previousElement.classList.remove('active');
         }
-        element.classList.add('active'); // Add 'active' class to the clicked element
-        previousElement = element; // Update the reference to the current active element
+        element.classList.add('active');
+        previousElement = element;
     }
 
-    // Initialize the active link setting on page load
     setActiveLink();
 
-    // Add click event listeners to each clickable item
     document.querySelectorAll('.clickable').forEach(element => {
         element.addEventListener('click', () => handleClickableClick(element));
     });
 
-    // Add click event listeners to "More Information" buttons
-    document.querySelectorAll('.more-info-btn').forEach(button => {
-        button.addEventListener('click', function () {
-            const seasonDiv = this.parentElement;
-
-            if (seasonDiv.classList.contains('oregairu')) {
-                seasonDiv.classList.remove('oregairu');
-            } else {
-                document.querySelectorAll('.seasons').forEach(div => div.classList.remove('oregairu'));
-                seasonDiv.classList.add('oregairu');
-            }
-        });
-    });
+    // Expand/collapse search bar
     const searchIcon = document.querySelector('#searchcontainer img');
     const searchBar = document.getElementById('searchbar');
-    
-    // Add 'expanded' class when image is clicked
     searchIcon.addEventListener('click', () => {
         searchBar.classList.add('expanded');
-        searchBar.focus(); // Set focus to the input field
+        searchBar.focus();
     });
-    
-    // Remove 'expanded' class when input loses focus
     searchBar.addEventListener('blur', () => {
         searchBar.classList.remove('expanded');
     });
-    
-    
+
+    // More Information button toggle
     document.querySelectorAll('.more-info-btn').forEach(button => {
         button.addEventListener('click', function () {
             const seasonDiv = this.parentElement;
-
             if (seasonDiv.classList.contains('oregairu')) {
                 seasonDiv.classList.remove('oregairu');
             } else {
@@ -103,19 +86,35 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     window.onclick = function (event) {
-        if (event.target == loginModal) loginModal.style.display = "none";
-        if (event.target == signupModal) signupModal.style.display = "none";
+        if (event.target === loginModal) loginModal.style.display = "none";
+        if (event.target === signupModal) signupModal.style.display = "none";
     };
 
     // Image Slider Functionality
     const slides = document.querySelector('.slides');
     const totalSlides = document.querySelectorAll('.slide').length;
 
+    function updateHeaderBackground() {
+        const header = document.querySelector('#header');
+        if (!header) return;
+
+        const specificSlideIndex = 1; // Replace with your desired slide index
+        if (slideIndex === specificSlideIndex) {
+            header.style.backgroundColor = 'rgba(28, 27, 42, 0.792)'; // Color for specific slide
+        } else if (window.scrollY > 0) {
+            header.style.backgroundColor = 'rgba(28, 27, 42, 0.792)'; // Solid color on scroll
+        } else {
+            header.style.backgroundColor = 'rgba(76, 0, 227, 0)'; // Transparent at top
+        }
+    }
+
     function showSlides(n) {
         slideIndex += n;
         if (slideIndex >= totalSlides) slideIndex = 0;
         if (slideIndex < 0) slideIndex = totalSlides - 1;
         slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+
+        updateHeaderBackground();
     }
 
     function startAutoSlide() {
@@ -130,67 +129,69 @@ document.addEventListener('DOMContentLoaded', function () {
         clearInterval(autoSlideInterval);
     }
 
-    // Event listeners for next and previous buttons
+    // Detect touch swipe for mobile
+    function handleTouchStart(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }
+
+    function handleTouchEnd(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) {
+            showSlides(1); // Swipe left (next slide)
+        }
+        if (touchEndX - touchStartX > 50) {
+            showSlides(-1); // Swipe right (previous slide)
+        }
+    }
+
+    // Add touch event listeners
+    document.querySelector('.slides').addEventListener('touchstart', handleTouchStart);
+    document.querySelector('.slides').addEventListener('touchend', handleTouchEnd);
+
+    // Add event listeners for the next and previous buttons (desktop only)
     document.querySelector('.prev').addEventListener('click', () => {
         showSlides(-1);
-        stopAutoSlide(); // Stop auto slide when user interacts
+        stopAutoSlide();
         userInteraction = true;
     });
 
     document.querySelector('.next').addEventListener('click', () => {
         showSlides(1);
-        stopAutoSlide(); // Stop auto slide when user interacts
+        stopAutoSlide();
         userInteraction = true;
     });
 
-    // Start the automatic slide on page load
     startAutoSlide();
 
     // Change header background on scroll
     function handleScroll() {
-        const header = document.querySelector('#header'); // Select the header by correct ID
-        if (header) { // Check if header exists
-            if (window.scrollY > 0) {
-                header.style.backgroundColor = 'rgba(28, 27, 42, 0.792)'; // Solid color when scrolling
-            } else {
-                header.style.backgroundColor = 'rgba(76, 0, 227, 0)'; // Transparent when at the top
-            }
-        } else {
-            console.error('Header element not found.');
-        }
+        updateHeaderBackground();
     }
 
     window.addEventListener('scroll', handleScroll);
-});
 
-// Get elements
-const sideNav = document.getElementById('sideNav');
-const hamburgerIcon = document.getElementById('hamburgerIcon');
-const overlay = document.getElementById('overlay');
+    // Sidebar functionality
+    const sideNav = document.getElementById('sideNav');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const overlay = document.getElementById('overlay');
 
-// Function to open the sidebar
-function openNav() {
-    sideNav.classList.add('active');
-    overlay.classList.add('active');
-}
-
-// Function to close the sidebar
-function closeNav() {
-    sideNav.classList.remove('active');
-    overlay.classList.remove('active');
-}
-
-// Event listener to toggle sidebar on hamburger icon click
-hamburgerIcon.addEventListener('click', () => {
-    if (sideNav.classList.contains('active')) {
-        closeNav();
-    } else {
-        openNav();
+    function openNav() {
+        sideNav.classList.add('active');
+        overlay.classList.add('active');
     }
+
+    function closeNav() {
+        sideNav.classList.remove('active');
+        overlay.classList.remove('active');
+    }
+
+    hamburgerIcon.addEventListener('click', () => {
+        if (sideNav.classList.contains('active')) {
+            closeNav();
+        } else {
+            openNav();
+        }
+    });
+
+    overlay.addEventListener('click', closeNav);
 });
-
-// Event listener to close sidebar if clicking on overlay
-overlay.addEventListener('click', closeNav);
-
-console.log('works');
-                                
