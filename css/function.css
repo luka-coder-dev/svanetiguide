@@ -5,6 +5,10 @@
     box-sizing: border-box;
     font-family: Arial,  sans-serif;
 }
+::-webkit-scrollbar {
+    display: none;
+}
+
 
 body {
     font-family: Arial, sans-serif;
@@ -242,6 +246,8 @@ nav ul li a:hover::after {
     z-index: 0;
 }
 
+
+
 /* Navigation Buttons */
 .prev, .next {
     cursor: pointer;
@@ -256,13 +262,13 @@ nav ul li a:hover::after {
     border-radius: 10px; /* Circular shape */
     user-select: none;
     background: linear-gradient(145deg, rgba(219, 219, 219, 0.305), rgba(255, 255, 255, 0.3)); /* Subtle, soft gradient */
-    z-index: 2; /* Ensure buttons are above the overlay */
+    z-index: 2s; /* Ensure buttons are above the overlay */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     transition: all 0.3s ease; /* Smooth animations */
 }
 
 .next {
-    top: 80%; /* Position the 'next' button */
+    top: 78%; /* Position the 'next' button */
     transform: translateY(-50%);
 }
 
@@ -516,7 +522,7 @@ nav ul li a:hover::after {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
     z-index: 10; /* Bring the hovered element in front */
 }
-
+  
 .thumbnail {
     width: 100%;
     height: 150px;
@@ -725,3 +731,154 @@ header {
     width: 30px;
     color: white;
 }
+
+@media (max-width: 768px) {
+    #header { display: none; }
+    #sideNav, #hamburgerIcon { display: block; }
+  }
+  
+  @media (min-width: 769px) {
+    #sideNav, #hamburgerIcon { display: none; }
+    #header { display: flex; }
+  }
+  
+/* Base state: Hidden initially */
+.fade-in {
+    opacity: 0;
+    transform: translateY(0) translateX(0) scale(1);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  /* Fade-in from Left to Right */
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Fade-in from Right to Left */
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Fade-in from Top to Bottom */
+  @keyframes fadeInTop {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Fade-in from Bottom to Top */
+  @keyframes fadeInBottom {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Fade-in with Scale Up */
+  @keyframes fadeInScaleUp {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Fade-in with Scale Down */
+  @keyframes fadeInScaleDown {
+    from {
+      opacity: 0;
+      transform: scale(1.2);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+/* Base hidden state for all elements */
+.fade-in {
+    opacity: 0; /* Invisible by default */
+    transform: translateY(0) translateX(0) scale(1); /* Reset any movement */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  /* Fade in from left */
+  .fade-in-left {
+    transform: translateX(-50px); /* Start off-screen to the left */
+  }
+  .fade-in-left.animate {
+    opacity: 1;
+    transform: translateX(0); /* Move to original position */
+  }
+  
+  /* Fade in from right */
+  .fade-in-right {
+    transform: translateX(50px); /* Start off-screen to the right */
+  }
+  .fade-in-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Fade in from top */
+  .fade-in-top {
+    transform: translateY(-50px); /* Start above */
+  }
+  .fade-in-top.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Fade in from bottom */
+  .fade-in-bottom {
+    transform: translateY(50px); /* Start below */
+  }
+  .fade-in-bottom.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Fade in with scale up */
+  .fade-in-scale-up {
+    transform: scale(0.8); /* Smaller at start */
+  }
+  .fade-in-scale-up.animate {
+    opacity: 1;
+    transform: scale(1); /* Scale back to normal */
+  }
+  
+  /* Fade in with scale down */
+  .fade-in-scale-down {
+    transform: scale(1.2); /* Larger at start */
+  }
+  .fade-in-scale-down.animate {
+    opacity: 1;
+    transform: scale(1); /* Scale back to normal */
+  }
+  
+  

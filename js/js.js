@@ -194,4 +194,34 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     overlay.addEventListener('click', closeNav);
+
+    document.getElementById('searchbar').addEventListener('input', function (e) {
+        const filter = e.target.value.toLowerCase();
+        const cards = document.querySelectorAll('.location-card');
+        cards.forEach(card => {
+          const title = card.querySelector('.location-title').textContent.toLowerCase();
+          card.style.display = title.includes(filter) ? 'block' : 'none';
+        });
+      });
+    
+    const elements = document.querySelectorAll(".fade-in");
+    
+    const onScroll = () => {
+        elements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const elementTop = rect.top;
+    
+        // Check if the element is in view
+        if (elementTop <= window.innerHeight - 50) {
+            el.classList.add("animate");
+        }
+        });
+    };
+    
+    // Attach the scroll event listener
+    window.addEventListener("scroll", onScroll);
+    
+    // Initial check for elements already in view
+    onScroll();
+
 });
