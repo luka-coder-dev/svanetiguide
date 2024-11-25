@@ -1,13 +1,35 @@
-// Open Modal Functions
+// Function to open a specific modal
 function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
-    document.querySelector(`#${modalId} .modal-content`).classList.add('show');
 }
 
+// Function to close a specific modal
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = "none";
-    document.querySelector(`#${modalId} .modal-content`).classList.remove('show');
 }
+
+// Event listener for the "Sign Up" link in the Login Modal
+document.getElementById('signup-link').addEventListener('click', function () {
+    closeModal('loginModal'); // Close the login modal
+    openModal('signupModal'); // Open the signup modal
+});
+
+// Event listener for the "Login" link in the Signup Modal
+document.getElementById('login-link').addEventListener('click', function () {
+    closeModal('signupModal'); // Close the signup modal
+    openModal('loginModal'); // Open the login modal
+});
+
+// Event listener for the Guide Checkbox
+document.getElementById('signup-guide-checkbox').addEventListener('change', function () {
+    const guideFields = document.getElementById('guide-fields');
+    if (this.checked) {
+        guideFields.classList.add('show');
+    } else {
+        guideFields.classList.remove('show');
+    }
+});
+
 
 // Toggle Guide Fields
 const guideCheckbox = document.getElementById('signup-guide-checkbox');
@@ -60,3 +82,4 @@ document.getElementById('signup-submit').addEventListener('click', function(e) {
     // Close the modal after submitting
     closeModal('signupModal');
 });
+

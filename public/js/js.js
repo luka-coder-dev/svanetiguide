@@ -75,15 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     });
 
-    signupLink.onclick = () => {
-        loginModal.style.display = "none";
-        signupModal.style.display = "block";
-    };
-
-    loginLink.onclick = () => {
-        signupModal.style.display = "none";
-        loginModal.style.display = "block";
-    };
 
     window.onclick = function (event) {
         if (event.target === loginModal) loginModal.style.display = "none";
@@ -195,10 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     overlay.addEventListener('click', closeNav);
 
-<<<<<<< HEAD:js/js.js
-=======
-
->>>>>>> zura-is-cool:public/js/js.js
     document.getElementById('searchbar').addEventListener('input', function (e) {
         const filter = e.target.value.toLowerCase();
         const cards = document.querySelectorAll('.location-card');
@@ -207,29 +194,5 @@ document.addEventListener('DOMContentLoaded', function () {
           card.style.display = title.includes(filter) ? 'block' : 'none';
         });
       });
-<<<<<<< HEAD:js/js.js
-    
-    const elements = document.querySelectorAll(".fade-in");
-    
-    const onScroll = () => {
-        elements.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        const elementTop = rect.top;
-    
-        // Check if the element is in view
-        if (elementTop <= window.innerHeight - 50) {
-            el.classList.add("animate");
-        }
-        });
-    };
-    
-    // Attach the scroll event listener
-    window.addEventListener("scroll", onScroll);
-    
-    // Initial check for elements already in view
-    onScroll();
-
-=======
->>>>>>> zura-is-cool:public/js/js.js
 });
 

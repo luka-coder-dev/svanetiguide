@@ -4,7 +4,7 @@ const slider = document.getElementById('location-slider');
 const locations = document.querySelectorAll('.location-card');
 const totalLocations = locations.length;
 
-document.getElementById('prev-btn').addEventListener('click', () => {
+document.getElementById('prev').addEventListener('click', () => {
     if (currentIndex > 0) {
         currentIndex--;
     } else {
@@ -13,7 +13,7 @@ document.getElementById('prev-btn').addEventListener('click', () => {
     slider.style.transform = `translateX(-${currentIndex * (locations[0].offsetWidth + 16)}px)`; // Adjust this value based on the card width and margin
 });
 
-document.getElementById('next-btn').addEventListener('click', () => {
+document.getElementById('next').addEventListener('click', () => {
     if (currentIndex < totalLocations - 1) {
         currentIndex++;
     } else {
