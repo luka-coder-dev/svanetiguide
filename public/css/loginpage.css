@@ -1,0 +1,281 @@
+/* General Modal Styles (Shared) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background */
+    padding-top: 60px;
+    animation: fadeIn 0.5s ease-out; /* Modal fade-in animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border: none;
+    width: 80%;
+    max-width: 600px; /* Wider for a more "TV-like" feel */
+    border-radius: 40px; /* Rounded corners like an old TV */
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.5); /* Strong shadow to simulate depth */
+    transition: transform 0.3s ease-in-out;
+    transform: scale(0.8); /* Initial scale to make it appear from small */
+    /* Retro TV-like curvature effect */
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.modal-content.show {
+    transform: scale(1); /* Smooth scale-up effect */
+}
+
+/* Close Button */
+.close {
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff4d4d; /* Bright red on hover */
+    text-decoration: none;
+}
+
+.modal h1 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.modal input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.modal input:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(0, 255, 0, 0.6); /* Glowing effect */
+}
+
+.modal button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 24px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.2em;
+    box-shadow: 0px 8px 20px rgba(0, 255, 0, 0.4); /* Soft glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal button:hover {
+    opacity: 0.8;
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0px 12px 30px rgba(0, 255, 0, 0.6); /* More intense glow */
+}
+
+.modal button:active {
+    transform: scale(0.98); /* Slight shrink effect on click */
+}
+
+.modal .forgot-password,
+.modal .signup-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #007BFF;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.modal .forgot-password:hover,
+.modal .signup-link:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.modal .login-guide,
+.modal .signup-guide {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #007BFF;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.modal .login-guide:hover,
+.modal .signup-guide:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .modal h1 {
+        font-size: 1.8em;
+    }
+
+    .modal input {
+        font-size: 14px;
+    }
+
+    .modal button {
+        font-size: 1.1em;
+        padding: 14px 20px;
+    }
+
+    .close {
+        font-size: 28px;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* This ensures the modal is centered */
+    width: 100%;
+    max-width: 500px; /* Limit the width */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    border-radius: 15px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.guide-fields {
+    margin-top: 20px;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.guide-fields.show {
+    display: block;
+    opacity: 1;
+}
+
+.signup-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+/* Ensure modal stays within the viewport */
+.modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+    padding-bottom: 20px; /* Add padding at the bottom */
+}
+
+/* Optional: Add some margin to the inputs for visual spacing */
+input, button {
+    margin: 12px 0;
+}

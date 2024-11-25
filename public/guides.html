@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the beautiful Svaneti with its stunning landscapes and cultural heritage.">
+  <meta name="keywords" content="Svaneti, tours, travel, Georgia, adventure">
+  <meta name="author" content="Luka Japaridze">
+
+  <title>SVANETIGUID.com</title>
+  <link rel="stylesheet" href="css/function.css">
+  <link rel="stylesheet" href="css/loginpage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/slider.css">
+  <link rel="stylesheet" href="css/dynamic.css">
+</head>
+<body>
+  <header id="header">
+      <img src="images/logo.png" id="logo" alt="Logo">
+      <nav>
+          <ul class="myul">
+              <li class="navbar-item"><a href="index.html"><img src="icons/home.png" class="icons" alt="Home"></a></li>
+              <li class="navbar-item"><a href="walking-tours.html"><img src="icons/walk.png" class="icons" alt="Walking Tours"></a></li>
+              <li class="navbar-item"><a href="bike-tours.html"><img src="icons/bike.png" class="icons" alt="Bike Tours"></a></li>
+              <li class="navbar-item"><a href="horse-tours.html"><img src="icons/horse.png" class="icons" alt="Horse Tours"></a></li>
+              <li class="navbar-item" id="searchcontainer">
+                  <input type="text" name="search" id="searchbar" placeholder="Search...">
+                  <img src="icons/pixil-frame-0 (4).png" alt="Search">
+              </li>
+              <li class="navbar-item" id="login-btn"><img id="loginimg" src="images/149071.png" alt="Login"></li>
+          </ul>
+      </nav>
+  </header>
+
+  <div id="hamburgerIcon" class="fas fa-bars"></div>
+  <nav id="sideNav">
+      <ul>
+          <li><img id="loginimg" src="images/149071.png" alt="Login"></li>
+          <li class="clickable"><a href="index.html">Home</a></li>
+          <li class="clickable"><a href="about.html">About</a></li>
+          <li class="clickable"><a href="about.html">Services</a></li>
+          <li class="clickable"><a href="about.html">Contact</a></li>
+      </ul>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
+  
+
+  <div id="loginModal" class="modal">
+      <div class="modal-content">
+          <span class="close">×</span>
+          <h1>Login</h1>
+          <input type="text" id="login-email" placeholder="Email" required>
+          <input type="password" id="login-password" placeholder="Password" required>
+          <button id="login-submit">Login</button>
+          <span class="forgot-password">Forgot your password?</span>
+          <span class="signup-link" id="signup-link">Don't have an account? Sign Up</span>
+      </div>
+  </div>
+
+  <div id="signupModal" class="modal">
+      <div class="modal-content">
+          <span class="close">×</span>
+          <h1>Sign Up</h1>
+          <input type="text" id="signup-email" placeholder="Email" required>
+          <input type="password" id="signup-password" placeholder="Password" required>
+          <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+          <button id="signup-submit">Sign Up</button>
+          <span class="signup-link" id="login-link">Already have an account? Login</span>
+      </div>
+  </div>
+
+  <script src="js/js.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/secondSlider.js"></script>
+  <script src="js/zooming.js"></script>
+  <script src="js/dynamic.js"></script>
+</body>
+</html>

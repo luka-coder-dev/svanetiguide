@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the beautiful Svaneti with its stunning landscapes and cultural heritage.">
+  <meta name="keywords" content="Svaneti, tours, travel, Georgia, adventure">
+  <meta name="author" content="Luka Japaridze">
+
+  <title>SVANETIGUID.com</title>
+  <link rel="stylesheet" href="css/function.css">
+  <link rel="stylesheet" href="css/loginpage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/slider.css">
+  <link rel="stylesheet" href="css/dynamic.css">
+</head>
+<body>
+  <div id="animated-background"></div>
+
+  <header id="header">
+      <img src="images/logo.png" id="logo" alt="Logo">
+      <nav>
+          <ul class="myul">
+              <li class="navbar-item"><a href="index.html"><img src="icons/home.png" class="icons" alt="Home"></a></li>
+              <li class="navbar-item"><a href="guides.html"><img src="icons/walk.png" class="icons" alt="Walking Tours"></a></li>
+              <li class="navbar-item" id="searchcontainer">
+                  <input type="text" autocomplete="off" name="search" id="searchbar" placeholder="Search...">
+                  <img src="icons/pixil-frame-0 (4).png" alt="Search">
+              </li>
+              <li class="navbar-item" id="login-btn"><img id="loginimg" src="images/149071.png" alt="Login"></li>
+          </ul>
+      </nav>
+  </header>
+
+  <div id="hamburgerIcon" class="fas fa-bars"></div>
+  <nav id="sideNav">
+      <ul>
+          <li><img id="loginimg" src="images/149071.png" alt="Login"></li>
+          <li class="clickable"><a href="index.html">Home</a></li>
+          <li class="clickable"><a href="about.html">About</a></li>
+          <li class="clickable"><a href="about.html">Services</a></li>
+          <li class="clickable"><a href="about.html">Contact</a></li>
+      </ul>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
+  <section id="slider">
+      <div id="gradient"></div>
+      <div class="slides">
+          <div class="slide">
+              <img src="images/image 01.jpg" alt="Image 1" class="sliderimages">
+              <div class="slide-text">
+                  <h2 id="myh2" class="texton">Svaneti</h2>
+                  <p id="myp1" class="texton">Svaneti is known for its beautiful mountains like Zuruldi, Tetnuldi, and others, where you can go hiking or skiing in winter.</p>
+              </div>
+          </div>
+          <div class="slide">
+              <img src="images/image 02.jpg" alt="Image 2" class="sliderimages">
+              <div class="slide-text">
+                  <h2 id="myh2" class="texton">Svan towers</h2>
+                  <p id="myp1" class="texton">Svan towers are common defensive structures in Svaneti, usually 20-25 meters high, with 4-5 floors, and sometimes even 6.</p>
+              </div>
+          </div>
+          <div class="slide">
+              <img src="images/image 03.webp" alt="Image 3" class="sliderimages">
+              <div class="slide-text">
+                  <h2 id="myh2" class="texton">Kubdari</h2>
+                  <p id="myp1" class="texton">Kubdari is a traditional Svanetian dish made with folded meat dough and secret local ingredients.</p>
+              </div>
+          </div>
+      </div>
+      <a class="prev" onclick="showSlides(-1)">❮</a>
+      <a class="next" onclick="showSlides(1)">❯</a>
+  </section>
+
+  <h1 id="seasonh1" class="appear">You can enjoy trip in Svaneti<br>no matter the season</h1>
+  <div id="gridcontainer">
+      <div class="seasons appear">
+          <section>
+              <h1>spring</h1>
+              <p>Spring in Svaneti is a magical time when the mountains come alive with blooming flowers and melting snow, offering stunning hiking opportunities.</p>
+          </section>
+      </div>
+      <div class="seasons appear">
+          <section>
+              <h1>summer</h1>
+              <p>Summer is the perfect season for exploring Svaneti's lush green landscapes, enjoying long daylight hours, and taking part in outdoor activities.</p>
+          </section>
+      </div>
+      <div class="seasons appear">
+          <section>
+              <h1>autumn</h1>
+              <p>Autumn brings a riot of colors to Svaneti, with forests turning shades of gold and red, making it a paradise for photographers and nature lovers.</p>
+          </section>
+      </div>
+      <div class="seasons appear">
+          <section>
+              <h1>winter</h1>
+              <p>Winter in Svaneti transforms the region into a snowy wonderland, perfect for skiing, snowboarding, and experiencing the unique winter culture.</p>
+          </section>
+      </div>
+  </div>
+
+  <!-- Fullscreen Image Container -->
+  <div id="fullscreen-container">
+    <img id="fullscreen-image" src="" alt="Full view">
+  </div>
+
+
+
+  <h1 id="seasonh1">Top Locations in Svaneti</h1>
+  <div id="locations-container" class="appearEasy">
+      <button id="prev-btn-2" class="nav-btn nav-btn-left">❮</button>
+      <div id="location-slider">
+          <div class="emptyDiv"></div>
+          <div class="location-card appear first-location-card">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <div class="location-card appear">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <div class="location-card appear">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <div class="location-card appear">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <div class="location-card appear">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <div class="location-card appear">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <div class="location-card appear">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <div class="location-card appear">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <div class="location-card appear">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <div class="location-card appear">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <div class="location-card appear">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <div class="location-card appear">
+              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
+              <p class="location-title">Location 1</p>
+              <p class="location-views">Some description here</p>
+          </div>
+          <!-- Repeated location cards -->
+      </div>
+      <button id="next-btn-2" class="nav-btn nav-btn-right">❯</button>
+  </div>
+
+  <section id="svanetian-salt-section">
+      <div class="svanetian-salt-content">
+          <div class="text-content appearFromLeft">
+              <h2>Svanetian Salt</h2>
+              <p>Experience the unique flavor of Svanetian Salt, a traditional blend of local herbs and spices, harvested from the pristine mountains of Svaneti. Perfect for enhancing your culinary creations.</p>
+              <button class="btn-learn-more appearSoon">Learn More</button>
+              <button class="btn-learn-more appearSoon" id="buy">Buy</button>
+          </div>
+          <div class="image-content appearFromRight">
+              <img src="images/svanetian-salt.jpg" alt="Svanetian Salt">
+          </div>
+      </div>
+  </section>
+
+ <!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('loginModal')">×</span>
+        <h1>Login</h1>
+        <input type="text" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button id="login-submit">Login</button>
+        <span class="forgot-password">Forgot your password?</span>
+        <span class="signup-link" id="signup-link">Don't have an account? Sign Up</span>
+    </div>
+  </div>
+
+
+  <script src="js/js.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/secondSlider.js"></script>
+  <script src="js/zooming.js"></script>
+  <script src="js/dynamic.js"></script>
+  <script src="js/login.js"></script>
+
+</body>
+</html>
