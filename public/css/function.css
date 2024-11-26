@@ -23,10 +23,6 @@ body {
 }
 
 
-::-webkit-scrollbar{
-    /*disable scrollbar */
-    display: none;
-}
 
 #header {
     background-color: rgba(28, 27, 42, 0.792); /* Initially transparent */
@@ -188,19 +184,7 @@ nav ul li a:hover::after {
     opacity: 1;
 }
 
-/* Media Query for screens 900px and below */
-@media (max-width: 900px) {
-   
-    
-    #hamburgerIcon {
-        display: block; /* Show hamburger icon on smaller screens */
-        position: fixed;
-        top: 20px;
-        right: 10px;
-      
-        z-index: 1001;
-    }
-}
+
 
 
 /* Image Slider Styling */
@@ -302,15 +286,8 @@ nav ul li a:hover::after {
     filter: brightness(1.2); /* Add a brightening effect */
 }
 /* Hide navigation buttons on mobile and allow swipe functionality */
-@media only screen and (max-width: 768px) {
-    .prev, .next {
-        display: none; /* Hide navigation buttons */
-    }
 
-    .slides {
-        touch-action: pan-y; /* Enable swipe gestures */
-    }
-}
+   
 
 
 .texton {
@@ -398,34 +375,15 @@ nav ul li a:hover::after {
 
 
 /* Responsive Styles */
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     #gridcontainer {
+        display: grid;
         grid-template-columns: repeat(4, 1fr); /* Reduce columns to 3 on medium screens */
     }
 }
 
-@media (max-width: 900px) {
-    #gridcontainer {
-        grid-template-columns: repeat(2, 1fr); /* Reduce columns to 2 on smaller screens */
-    }
-    
-    .slide-text {
-        font-size: 1.5rem; /* Reduce font size for smaller screens */
-        max-width: 70%;
-    }
-    
-    #searchbar {
-        width: 120px; /* Reduce search bar width */
-    }
-}
-@media (max-width: 768px){
-    .seasons p {
-        color: white;
-        font-size: 12px;
-        line-height: 1.5;
-    }
-    
-}
+
+
 
 @media (max-width: 600px) {
     header {
@@ -572,6 +530,8 @@ nav ul li a:hover::after {
     top: 55%;
     transform: translateY(-50%);
     transition: background-color 0.3s ease;
+    user-select: none;
+    -webkit-user-select: none;
 }
 .nav-btn:hover {
     background-color: rgba(0, 0, 0, 0.7);
@@ -777,6 +737,26 @@ header {
     header ul {
         display: none; /* Hide list items in the header */
     }
+    #gridcontainer {
+        grid-template-columns: repeat(2, 1fr); /* Reduce columns to 2 on smaller screens */
+    }
+    
+    .slide-text {
+        font-size: 1.5rem; /* Reduce font size for smaller screens */
+        max-width: 70%;
+    }
+    
+    #searchbar {
+        width: 120px; /* Reduce search bar width */
+    }
+    #hamburgerIcon {
+        display: block; /* Show hamburger icon on smaller screens */
+        position: fixed;
+        top: 20px;
+        right: 10px;
+      
+        z-index: 1001;
+    }
 }
 .icons{
     margin-top: 10px;
@@ -799,13 +779,7 @@ header {
     background-clip: text; /* Clips the gradient to the text */
     -webkit-background-clip: text; /* For Safari support */
     transition: transform 0.3s ease-in-out; /* Smooth hover animation */
-    user-select: none; /* Prevent text selection */
-    text-shadow: 
-        0px 0px 8px rgba(0, 0, 0, 0.3),    /* Small, soft shadow */
-        0px 0px 12px rgba(0, 0, 0, 0.24),   /* Larger soft shadow */
-        0px 0px 16px rgba(0, 0, 0, 0.18),   /* More diffused shadow */
-        0px 0px 24px rgba(0, 0, 0, 0.12),   /* Subtle glow effect */
-        0px 0px 40px rgba(0, 0, 0, 0.6);   /* Extended, faint shadow */
+    user-select: none; /* Prevent text selection */ 
 }
 
 /* Keyframe for dynamic color-changing gradient */
@@ -870,33 +844,10 @@ header {
 }
 
 /* Mobile: Always show the text */
-@media (max-width: 768px) {
-    .seasons h1,
-    .seasons p {
-        opacity: 1; /* Text always visible on mobile */
-        transform: translateY(0);
-        transition: none; /* Disable hover animation */
-    }
 
-    .seasons {
-        cursor: default; /* No pointer cursor for mobile */
-    }
-}
 
 /* Adjust text size for smaller devices */
-@media (max-width: 480px) {
-    #seasonh1 {
-        font-size: clamp(1.2rem, 3vw, 1.5rem);
-    }
 
-    .seasons h1 {
-        font-size: clamp(1rem, 2.5vw, 1.2rem);
-    }
-
-    .seasons p {
-        font-size: clamp(0.7rem, 2vw, 0.8rem);
-    }
-}
 /* Svanetian Salt Section */
 #svanetian-salt-section {
     background-color: #f4f4f4; /* Light background color */
@@ -981,6 +932,28 @@ header {
     #buy {
         margin-left: 0; /* Remove any extra margin */
     }
+    .seasons p {
+        color: white;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    .prev, .next {
+        display: none; /* Hide navigation buttons */
+    }
+
+    .slides {
+        touch-action: pan-y; /* Enable swipe gestures */
+    }
+    .seasons h1,
+    .seasons p {
+        opacity: 1; /* Text always visible on mobile */
+        transform: translateY(0);
+        transition: none; /* Disable hover animation */
+    }
+
+    .seasons {
+        cursor: default; /* No pointer cursor for mobile */
+    }
 }
 
 @media (max-width: 480px) {
@@ -1006,6 +979,17 @@ header {
     .text-content p {
         font-size: 15px; /* Make paragraph text even smaller on very small devices */
         margin: 5px 0; /* Further adjust margin for small screens */
+    }
+    #seasonh1 {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+    }
+
+    .seasons h1 {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    .seasons p {
+        font-size: clamp(0.7rem, 2vw, 0.8rem);
     }
 }
 
@@ -1067,17 +1051,3 @@ header {
         background-position: 0% 50%;
     }
 }
-
-#animated-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #ff05052c, #d0d0d0, #d8d8d8, #4400ff77);
-    background-size: 200% 200%;
-    animation: colorShift 15s linear infinite;
-    z-index: -1;
-    will-change: background-position;
-}
-
