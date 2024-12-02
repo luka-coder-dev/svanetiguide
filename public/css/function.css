@@ -130,61 +130,6 @@ nav ul li a:hover::after {
     display: none; /* Hidden on larger screens */
 }
 
-/* Side Navigation for smaller screens */
-#sideNav {
-    width: 100px;
-    height: 100%;
-    background-color: #4c00e3;
-    position: fixed;
-    top: 0;
-    right: -300px; /* Initially hidden */
-    z-index: 999;
-    transition: right 0.4s ease;
-}
-
-#sideNav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    padding-top: 60px; /* Space from top header */
-}
-
-#sideNav ul li {
-    padding: 20px;
-    text-align: center;
-}
-
-#sideNav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-/* Overlay for sidebar */
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-    display: none; /* Hidden by default */
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-/* Active state when sidebar is open */
-#sideNav.active {
-    right: 0;
-}
-
-#overlay.active {
-    display: block;
-    opacity: 1;
-}
-
-
 
 
 /* Image Slider Styling */
@@ -295,14 +240,6 @@ nav ul li a:hover::after {
     display: block;
 }
 
-/* Header Style */
-#seasonh1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-top: 4rem;
-    text-align: center;
-}
-
 /* Grid Container */
 #gridcontainer {
     display: grid;
@@ -311,22 +248,25 @@ nav ul li a:hover::after {
     margin-top: 2rem;
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
     gap: 10px; /* Gap between grid items */
-    transition: all 0.5s ease; /* Smooth transition for changes */
+   
 }
 
 /* Seasons Style */
 .seasons {
     border: 3px solid black;
-    border-radius: 15px;
-    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
-    transition: all 0.5s ease; /* Smooth transition for hover effect */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-size: cover;
     background-position: center;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-
+   transition: all 0.3s ease;
+   cursor: pointer;
+    transform: scale(1.05); /* Slightly enlarge the hovered item */
+    padding: 15px;
+    text-align: center;
+    line-height: 1.5;
 }
+
+
 .seasons section{
     position: absolute;
     right: 0;
@@ -334,14 +274,9 @@ nav ul li a:hover::after {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
 }
 
-/* Hover Effect */
-#gridcontainer:hover .seasons {
-    flex-grow: 1; /* Make all items grow */
-}
-
 #gridcontainer .seasons:hover {
-    grid-template-columns: 35% 1fr 1fr 1fr; /* Set the hovered item to 35% width, and others share remaining space */
-    transform: scale(1.05); /* Slightly enlarge the hovered item */
+    grid-template-columns: 37% 1fr 1fr 1fr; /* Set the hovered item to 35% width, and others share remaining space */
+    transform: scale(1.07); /* Slightly enlarge the hovered item */
 }
 
 /* Seasons Backgrounds */
@@ -362,9 +297,8 @@ nav ul li a:hover::after {
 }
 
 .seasons h1 {
-   
     font-size: 2.50rem;
- 
+    margin-bottom: 10px;
     color: white;
 }
 
@@ -372,91 +306,6 @@ nav ul li a:hover::after {
     font-size: 1.2rem;
     color: white;
 }
-
-
-/* Responsive Styles */
-@media (max-width: 1000px) {
-    #gridcontainer {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* Reduce columns to 3 on medium screens */
-    }
-}
-
-
-
-
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        display: none; /* Hide the navigation menu by default */
-    }
-    
-    #searchcontainer {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-    
-    .seasons h1 {
-        font-size: 1.8rem;
-    }
-    
-    .seasons p {
-        font-size: 1.2rem;
-        color: white;
-    }
-    
-    /* Mobile side navigation */
-    .side-nav {
-        position: fixed;
-        top: 0;
-        left: -250px; /* Initially hide side nav offscreen */
-        width: 250px;
-        height: 100%;
-        background: rgba(76, 0, 227, 0.9);
-        color: white;
-        transition: left 0.3s ease;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-        z-index: 100;
-    }
-    
-    .side-nav.open {
-        left: 0; /* Show side nav when open */
-    }
-    
-    .side-nav ul {
-        list-style: none;
-        padding: 20px;
-    }
-    
-    .side-nav ul li {
-        margin: 20px 0;
-    }
-    
-    .side-nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.2rem;
-    }
-    
-    .side-nav .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-}
-
-
-.seasons h1 {
-    margin-bottom: 10px;
-}
-
 
 #locations-container {
     position: relative;
@@ -489,13 +338,6 @@ nav ul li a:hover::after {
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 5; /* Base z-index */
-}
-.emptyDiv{
-    min-width: 200px;
-    flex: 0 0 auto;
-    overflow: hidden;
-    margin-right: 16px;
-    position: relative;
 }
 
 .location-card:hover {
@@ -574,6 +416,7 @@ nav ul li a:hover::after {
     padding: 20px;
 }
 
+
 .text-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -583,10 +426,12 @@ nav ul li a:hover::after {
 }
 
 .text-content p {
-    font-size: 1.2rem;
+    font-size: 20px; /* Default font size for paragraphs */
     line-height: 1.6;
     margin-bottom: 2rem;
+    margin: 10px 0; /* Margin around paragraphs */
 }
+
 .btn-learn-more {
     padding: 15px 50px; /* Smaller padding for a compact button */
     font-size: 0.875rem; /* Slightly smaller font size */
@@ -708,56 +553,10 @@ header {
     background-color: #575757;
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
+
 
 /* Responsive Styles */
-@media screen and (max-width: 900px) {
-    header {
-        justify-content: flex-end; /* Search and login will be right-aligned */
-    }
 
-    #menu-icon {
-        display: block; /* Show menu icon */
-    }
-
-    .search-bar, .login-img {
-        margin-left: 15px;
-    }
-
-    /* Move the header links to the side nav */
-    header ul {
-        display: none; /* Hide list items in the header */
-    }
-    #gridcontainer {
-        grid-template-columns: repeat(2, 1fr); /* Reduce columns to 2 on smaller screens */
-    }
-    
-    .slide-text {
-        font-size: 1.5rem; /* Reduce font size for smaller screens */
-        max-width: 70%;
-    }
-    
-    #searchbar {
-        width: 120px; /* Reduce search bar width */
-    }
-    #hamburgerIcon {
-        display: block; /* Show hamburger icon on smaller screens */
-        position: fixed;
-        top: 20px;
-        right: 10px;
-      
-        z-index: 1001;
-    }
-}
 .icons{
     margin-top: 10px;
     width: 30px;
@@ -770,41 +569,13 @@ header {
     margin-bottom: 2rem;
     max-width: 80%;
     font-size: clamp(2rem, 4vw, 3rem); /* Responsive font size */
-    line-height: 1.3;
+
     font-weight: 700; /* Bold font for emphasis */
     font-family: 'Poppins', sans-serif; /* Modern, clean font */
     background: linear-gradient(45deg, #acacac, #27470d, #7c9799, #d7d7d7); /* Gradient with multiple colors */
     background-size: 400% 400%; /* Makes the gradient larger for smooth transitions */
-    color: transparent; /* Makes text transparent to show the gradient */
-    background-clip: text; /* Clips the gradient to the text */
-    -webkit-background-clip: text; /* For Safari support */
-    transition: transform 0.3s ease-in-out; /* Smooth hover animation */
-    user-select: none; /* Prevent text selection */ 
+   
 }
-
-/* Keyframe for dynamic color-changing gradient */
-@keyframes dynamicColorChange {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Apply the dynamic effect */
-#seasonh1 {
-    animation: dynamicColorChange 10s ease infinite; /* Infinite color shifting every 10 seconds */
-}
-
-/* Hover effect (without 3D effect) */
-#seasonh1:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-}
-
 
 #gridcontainer {
     display: grid;
@@ -817,38 +588,7 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.seasons {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    position: relative; /* For proper text positioning */
-    overflow: hidden; /* Prevent child elements from overflowing */
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
-    line-height: 1.5;
-    cursor: pointer; /* Add pointer cursor for better interactivity */
-}
 
-.seasons h1,
-.seasons p {
-    opacity: 0; /* Initially hidden */
-    transform: translateY(20px); /* Slide down slightly */
-    transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth appearance */
-}
-
-.seasons:hover h1,
-.seasons:hover p {
-    opacity: 1; /* Fully visible on hover */
-    transform: translateY(0); /* Return to normal position */
-}
-
-/* Mobile: Always show the text */
-
-
-/* Adjust text size for smaller devices */
-
-/* Svanetian Salt Section */
 #svanetian-salt-section {
     background-color: #f4f4f4; /* Light background color */
     padding: 50px 0;
@@ -865,189 +605,4 @@ header {
     gap: 30px; /* Space between text and image */
     padding: 0 2rem; /* Side padding */
     flex-wrap: wrap; /* Allows elements to wrap for responsiveness */
-}
-
-.text-content {
-    flex: 1;
-    max-width: 50%; /* Text takes up half of the width on large screens */
-}
-
-.image-content {
-    flex: 1;
-    max-width: 50%; /* Image takes up the other half on large screens */
-}
-
-/* Style for <p> inside text-content */
-.text-content p {
-    font-size: 20px; /* Default font size for paragraphs */
-    line-height: 1.6; /* Line height for better readability */
-    margin: 10px 0; /* Margin around paragraphs */
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    #svanetian-salt-section {
-        padding: 20px 10px; /* Adjust padding for smaller screens */
-    }
-
-    .svanetian-salt-content {
-        flex-direction: column; /* Stack content vertically on small screens */
-        align-items: center; /* Center content */
-        gap: 10px; /* Reduced space between text and image */
-    }
-
-    .text-content {
-        max-width: 100%; /* Allow text content to take full width on small screens */
-        text-align: center; /* Center text */
-        display: flex;
-        flex-direction: column; /* Stack the buttons vertically */
-        align-items: center; /* Center the buttons horizontally */
-        font-size: 12px; /* Reduce font size further */
-        line-height: 1.4; /* Adjust line height for better readability */
-        margin-bottom: 10px; /* Reduce space below text */
-    }
-
-    /* Style for <p> inside text-content on mobile */
-    .text-content p {
-        font-size: 15px; /* Make paragraph text smaller on mobile */
-        margin: 8px 0; /* Adjust margin to keep text compact */
-    }
-
-    .image-content {
-        max-width: 100%; /* Allow image to take full width on small screens */
-        text-align: center; /* Center image */
-        margin-top: 10px; /* Ensure image has some space above it */
-    }
-
-    /* Ensure buttons are stacked vertically and take full width */
-    .btn-learn-more {
-        width: 100%; /* Buttons take full width */
-        padding: 12px 0; /* Reduce padding for buttons */
-        margin-top: 10px;
-        display: block; /* Make sure the buttons behave as block elements */
-        font-size: 14px; /* Adjust button font size */
-    }
-
-    /* Fix for Buy Button alignment */
-    #buy {
-        margin-left: 0; /* Remove any extra margin */
-    }
-    .seasons p {
-        color: white;
-        font-size: 12px;
-        line-height: 1.5;
-    }
-    .prev, .next {
-        display: none; /* Hide navigation buttons */
-    }
-
-    .slides {
-        touch-action: pan-y; /* Enable swipe gestures */
-    }
-    .seasons h1,
-    .seasons p {
-        opacity: 1; /* Text always visible on mobile */
-        transform: translateY(0);
-        transition: none; /* Disable hover animation */
-    }
-
-    .seasons {
-        cursor: default; /* No pointer cursor for mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    /* Additional tweaks for very small screens */
-    .svanetian-salt-content {
-        padding: 0 1rem; /* Reduce side padding */
-    }
-
-    .btn-learn-more {
-        width: 100%;
-        font-size: 12px; /* Adjust button font size for small screens */
-        padding: 10px 0; /* Make buttons a bit smaller */
-    }
-
-    /* Further reduce text size for very small screens */
-    .text-content {
-        font-size: 10px; /* Make text even smaller for smaller devices */
-        line-height: 1.3; /* Further adjust line height for better fit */
-        margin-bottom: 5px; /* Reduce margin below text */
-    }
-
-    /* Style for <p> inside text-content on very small screens */
-    .text-content p {
-        font-size: 15px; /* Make paragraph text even smaller on very small devices */
-        margin: 5px 0; /* Further adjust margin for small screens */
-    }
-    #seasonh1 {
-        font-size: clamp(1.2rem, 3vw, 1.5rem);
-    }
-
-    .seasons h1 {
-        font-size: clamp(1rem, 2.5vw, 1.2rem);
-    }
-
-    .seasons p {
-        font-size: clamp(0.7rem, 2vw, 0.8rem);
-    }
-}
-
-/* Fullscreen Image Container with Smooth Transition */
-#fullscreen-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    opacity: 0; /* Start fully transparent */
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    cursor: pointer;
-    transition: opacity 0.5s ease; /* Smooth fade effect */
-}
-
-#fullscreen-container.visible {
-    display: flex; /* Show when active */
-    opacity: 1; /* Fully visible */
-}
-
-#fullscreen-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.5s ease; /* Smooth zoom effect */
-}
-
-#fullscreen-image.visible {
-    transform: scale(1); /* Reset to default */
-}
-
-/* Define the animation */
-@keyframes colorShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes colorShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }

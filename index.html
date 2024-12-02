@@ -8,26 +8,26 @@
   <meta name="author" content="Luka Japaridze">
 
   <title>SVANETIGUID.com</title>
-  <link rel="stylesheet" href="css/function.css">
-  <link rel="stylesheet" href="css/loginpage.css">
+  <link rel="stylesheet" href="public/css/function.css">
+  <link rel="stylesheet" href="public/css/loginpage.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="css/slider.css">
-  <link rel="stylesheet" href="css/dynamic.css">
+  <link rel="stylesheet" href="public/css/slider.css">
+ 
 </head>
 <body>
   <div id="animated-background"></div>
 
   <header id="header">
-      <img src="images/logo.png" id="logo" alt="Logo">
+      <img src="public/images/logo.png" id="logo" alt="Logo">
       <nav>
           <ul class="myul">
-              <li class="navbar-item"><a href="index.html"><img src="icons/home.png" class="icons" alt="Home"></a></li>
-              <li class="navbar-item"><a href="guides.html"><img src="icons/walk.png" class="icons" alt="Walking Tours"></a></li>
+              <li class="navbar-item"><a href="index.html"><img src="public/icons/home.png" class="icons" alt="Home"></a></li>
+              <li class="navbar-item"><a href="guides.html"><img src="public/icons/walk.png" class="icons" alt="Walking Tours"></a></li>
               <li class="navbar-item" id="searchcontainer">
                   <input type="text" autocomplete="off" name="search" id="searchbar" placeholder="Search...">
-                  <img src="icons/pixil-frame-0 (4).png" alt="Search">
+                  <img src="public/icons/pixil-frame-0 (4).png" alt="Search">
               </li>
-              <li class="navbar-item" id="login-btn"><img id="loginimg" src="images/149071.png" alt="Login"></li>
+              <li class="navbar-item" id="login-btn"><img id="loginimg" src="public/images/149071.png" alt="Login"></li>
           </ul>
       </nav>
   </header>
@@ -35,7 +35,7 @@
   <div id="hamburgerIcon" class="fas fa-bars"></div>
   <nav id="sideNav">
       <ul>
-          <li><img id="loginimg" src="images/149071.png" alt="Login"></li>
+          <li><img id="loginimg" src="public/images/149071.png" alt="Login"></li>
           <li class="clickable"><a href="index.html">Home</a></li>
           <li class="clickable"><a href="about.html">About</a></li>
           <li class="clickable"><a href="about.html">Services</a></li>
@@ -48,21 +48,21 @@
       <div id="gradient"></div>
       <div class="slides">
           <div class="slide">
-              <img src="images/image 01.jpg" alt="Image 1" class="sliderimages">
+              <img src="public/images/image 01.jpg" alt="Image 1" class="sliderimages">
               <div class="slide-text">
                   <h2 id="myh2" class="texton">Svaneti</h2>
                   <p id="myp1" class="texton">Svaneti is known for its beautiful mountains like Zuruldi, Tetnuldi, and others, where you can go hiking or skiing in winter.</p>
               </div>
           </div>
           <div class="slide">
-              <img src="images/image 02.jpg" alt="Image 2" class="sliderimages">
+              <img src="public/images/image 02.jpg" alt="Image 2" class="sliderimages">
               <div class="slide-text">
                   <h2 id="myh2" class="texton">Svan towers</h2>
                   <p id="myp1" class="texton">Svan towers are common defensive structures in Svaneti, usually 20-25 meters high, with 4-5 floors, and sometimes even 6.</p>
               </div>
           </div>
           <div class="slide">
-              <img src="images/image 03.webp" alt="Image 3" class="sliderimages">
+              <img src="public/images/image 03.webp" alt="Image 3" class="sliderimages">
               <div class="slide-text">
                   <h2 id="myh2" class="texton">Kubdari</h2>
                   <p id="myp1" class="texton">Kubdari is a traditional Svanetian dish made with folded meat dough and secret local ingredients.</p>
@@ -102,9 +102,7 @@
   </div>
 
   <!-- Fullscreen Image Container -->
-  <div id="fullscreen-container">
-    <img id="fullscreen-image" src="" alt="Full view">
-  </div>
+ 
 
 
 
@@ -143,36 +141,7 @@
               <p class="location-title">Location 1</p>
               <p class="location-views">Some description here</p>
           </div>
-          <div class="location-card appear">
-              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
-              <p class="location-title">Location 1</p>
-              <p class="location-views">Some description here</p>
-          </div>
-          <div class="location-card appear">
-              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
-              <p class="location-title">Location 1</p>
-              <p class="location-views">Some description here</p>
-          </div>
-          <div class="location-card appear">
-              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
-              <p class="location-title">Location 1</p>
-              <p class="location-views">Some description here</p>
-          </div>
-          <div class="location-card appear">
-              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
-              <p class="location-title">Location 1</p>
-              <p class="location-views">Some description here</p>
-          </div>
-          <div class="location-card appear">
-              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
-              <p class="location-title">Location 1</p>
-              <p class="location-views">Some description here</p>
-          </div>
-          <div class="location-card appear">
-              <div class="thumbnail" style="background-image: url('image1.jpg');"></div>
-              <p class="location-title">Location 1</p>
-              <p class="location-views">Some description here</p>
-          </div>
+         
           <!-- Repeated location cards -->
       </div>
       <button id="next-btn-2" class="nav-btn nav-btn-right">❯</button>
@@ -187,12 +156,13 @@
               <button class="btn-learn-more appearSoon" id="buy">Buy</button>
           </div>
           <div class="image-content appearFromRight">
-              <img src="images/svanetian-salt.jpg" alt="Svanetian Salt">
+              <img src="public/images/svanetian-salt.jpg" alt="Svanetian Salt">
           </div>
       </div>
   </section>
 
  <!-- Login Modal -->
+<!-- Login Modal -->
 <div id="loginModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal('loginModal')">×</span>
@@ -200,10 +170,10 @@
         <input type="text" id="login-email" placeholder="Email" required>
         <input type="password" id="login-password" placeholder="Password" required>
         <button id="login-submit">Login</button>
-        <span class="forgot-password">Forgot your password?</span>
-        <span class="signup-link" id="signup-link">Don't have an account? Sign Up</span>
+        <span id="signup-link" class="signup-link">Don't have an account? Sign Up</span>
     </div>
-  </div>
+</div>
+
 <!-- Signup Modal -->
 <div id="signupModal" class="modal">
     <div class="modal-content">
@@ -212,32 +182,28 @@
         <input type="text" id="signup-email" placeholder="Email" required>
         <input type="password" id="signup-password" placeholder="Password" required>
         <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
-        
-        <!-- Sign up as Guide Option -->
         <label>
             <input type="checkbox" id="signup-guide-checkbox"> Sign up as Guide
         </label>
-
-        <!-- Additional Guide Fields (Initially Hidden) -->
-        <div id="guide-fields" class="guide-fields">
-            <input type="text" id="guide-name" placeholder="Your Name" required>
+        <div class="guide-fields">
+            <input type="text" id="guide-name" placeholder="Name" required>
             <input type="text" id="guide-lastname" placeholder="Last Name" required>
             <input type="text" id="guide-number" placeholder="Phone Number" required>
             <input type="text" id="guide-address" placeholder="Address" required>
         </div>
-        
         <button id="signup-submit">Sign Up</button>
-        <span class="signup-link" id="login-link">Already have an account? Login</span>
+        <span id="login-link" class="signup-link">Already have an account? Login</span>
     </div>
 </div>
 
 
-  <script src="js/js.js"></script>
-  <script src="js/slider.js"></script>
-  <script src="js/secondSlider.js"></script>
-  <script src="js/zooming.js"></script>
-  <script src="js/dynamic.js"></script>
-  <script src="js/login.js"></script>
+
+  <script src="public/js/js.js"></script>
+  <script src="public/slider.js"></script>
+  <script src="public/secondSlider.js"></script>
+  <script src="public/zooming.js"></script>
+  <script src="public/dynamic.js"></script>
+  <script src="public/login.js"></script>
 
 </body>
 </html>

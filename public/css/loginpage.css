@@ -5,21 +5,21 @@
     z-index: 1;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%); /* This ensures the modal is centered */
-    width: 100%;
-    max-width: 500px; /* Limit the width */
+    transform: translate(-50%, -50%);
+    background-color: white;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4);
-    overflow: auto;
-    border-radius: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
 }
+
 
 .modal-content {
     background-color: #fefefe;
-    border: 1px solid #888;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   
 }
 
 .close {
@@ -46,7 +46,7 @@ h1 {
 input, button {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 12px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -70,14 +70,16 @@ label {
 
 .guide-fields {
     margin-top: 20px;
+    visibility: hidden;
     opacity: 0;
-    display: none;
-    transition: opacity 0.3s ease-in-out;
+    height: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 
 .guide-fields.show {
-    display: block;
+    visibility: visible;
     opacity: 1;
+    height: auto;
 }
 
 .signup-link {
@@ -96,10 +98,5 @@ label {
 .modal-content {
     max-height: 90vh;
     overflow-y: auto;
-    padding-bottom: 20px; /* Add padding at the bottom */
-}
-
-/* Optional: Add some margin to the inputs for visual spacing */
-input, button {
-    margin: 12px 0;
+    padding-bottom: 20px;
 }
